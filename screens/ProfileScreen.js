@@ -1,14 +1,15 @@
 import React from "react";
-import { View } from "react-native";
-import Header from "../components/header";
+import { View, Text } from "react-native";
 
-const ProfileScreen = () => {
-    return(
-        <View>
-            <Header />
-            <Text>Profile Screen</Text>
-        </View>
-    );
+const ProfileScreen = ({ route }) => {
+  const { name, course } = route.params || {};
+
+  return (
+    <View style={{ padding: 20 }}>
+      <Text>Name: {name}</Text>
+      <Text>Course: {course}</Text>
+    </View>
+  );
 };
 
 export default ProfileScreen;
